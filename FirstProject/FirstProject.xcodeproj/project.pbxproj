@@ -13,7 +13,6 @@
 		891596AC16960D1D00108444 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 891596AA16960D1D00108444 /* Credits.rtf */; };
 		891596AF16960D1D00108444 /* NSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 891596AE16960D1D00108444 /* NSAppDelegate.m */; };
 		891596B216960D1D00108444 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891596B016960D1D00108444 /* MainMenu.xib */; };
-		891596BA16960D1D00108444 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891596B916960D1D00108444 /* SenTestingKit.framework */; };
 		891596BB16960D1D00108444 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8915969B16960D1D00108444 /* Cocoa.framework */; };
 		891596C316960D1D00108444 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 891596C116960D1D00108444 /* InfoPlist.strings */; };
 		891596C616960D1D00108444 /* FirstProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891596C516960D1D00108444 /* FirstProjectTests.m */; };
@@ -44,8 +43,7 @@
 		891596AD16960D1D00108444 /* NSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSAppDelegate.h; sourceTree = "<group>"; };
 		891596AE16960D1D00108444 /* NSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSAppDelegate.m; sourceTree = "<group>"; };
 		891596B116960D1D00108444 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		891596B816960D1D00108444 /* FirstProjectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstProjectTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		891596B916960D1D00108444 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		891596B816960D1D00108444 /* FirstProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891596C016960D1D00108444 /* FirstProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirstProjectTests-Info.plist"; sourceTree = "<group>"; };
 		891596C216960D1D00108444 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		891596C416960D1D00108444 /* FirstProjectTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstProjectTests.h; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				891596BA16960D1D00108444 /* SenTestingKit.framework in Frameworks */,
 				891596BB16960D1D00108444 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				8915969716960D1D00108444 /* FirstProject.app */,
-				891596B816960D1D00108444 /* FirstProjectTests.octest */,
+				891596B816960D1D00108444 /* FirstProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				8915969B16960D1D00108444 /* Cocoa.framework */,
-				891596B916960D1D00108444 /* SenTestingKit.framework */,
 				8915969D16960D1D00108444 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -194,8 +190,8 @@
 			);
 			name = FirstProjectTests;
 			productName = FirstProjectTests;
-			productReference = 891596B816960D1D00108444 /* FirstProjectTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 891596B816960D1D00108444 /* FirstProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -204,7 +200,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = NS;
-				LastUpgradeCheck = 0450;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Немцов Александр";
 			};
 			buildConfigurationList = 8915969116960D1C00108444 /* Build configuration list for PBXProject "FirstProject" */;
@@ -331,7 +328,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -361,7 +357,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -409,13 +404,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FirstProject.app/Contents/MacOS/FirstProject";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FirstProject/FirstProject-Prefix.pch";
 				INFOPLIST_FILE = "FirstProjectTests/FirstProjectTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -424,13 +421,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FirstProject.app/Contents/MacOS/FirstProject";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FirstProject/FirstProject-Prefix.pch";
 				INFOPLIST_FILE = "FirstProjectTests/FirstProjectTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
